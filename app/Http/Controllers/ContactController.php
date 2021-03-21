@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    
     public function contact()
     {
         return view('contact-us');
@@ -16,16 +17,14 @@ class ContactController extends Controller
     public function sendEmail(Request $request)
     {
         $details = [
-            'name' => $request->name;
-            'email' => $request->email;
-            'subject' => $request->subject;
-            'msg' => $request->msg;
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'msg' => $request->msg
         ];
 
 
         Mail::to('ouldjelloulsara@gmail.com')->send(new ContactMail($details));
-        return back()->with('message_sent', 'Your message has been sent Successfuly')
-    }
-
-    
+        return back()->with('message_sent', 'Your message has been sent Successfuly');
+    }   
 }
