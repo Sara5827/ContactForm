@@ -16,7 +16,7 @@
 
 
         @endif
-        <form class="d-flex flex-column row g-3 needs-validation" novalidate>
+    <form class="d-flex flex-column row g-3 needs-validation" action="{{route('contact.send')}}" novalidate>
             <div class="col-md-4">
                 <label for="validationCustom01" for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" id="validationCustom01" value="Mark" required>
