@@ -9,6 +9,13 @@
 </head>
 <body>
     <div class="container">
+        @if(Session::has('message_sent'))
+        <div class="alert alert-success" role="alert"> 
+           {{Session::get('message_sent')}}
+        </div>
+
+
+        @endif
         <form class="d-flex flex-column row g-3 needs-validation" novalidate>
             <div class="col-md-4">
                 <label for="validationCustom01" for="name" class="form-label">Name</label>
